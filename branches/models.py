@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 
@@ -12,6 +13,7 @@ class Restaurant(models.Model):
 
 
 class Employee(models.Model):
+    avatar = models.ImageField(upload_to='upload/',null = True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     restaurant = models.ForeignKey(
